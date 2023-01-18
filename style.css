@@ -191,6 +191,10 @@ footer span {
     align-items: center; 
 }
 
+.cardHeader img {
+    width: 100px;
+}
+
 
 .Cityinfo {
     color: #fff;
