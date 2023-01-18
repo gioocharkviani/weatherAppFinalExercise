@@ -5,6 +5,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 
 .BoxWrapper {
     background: radial-gradient(circle, rgba(101,49,189,1) 0%, rgba(130,225,255,1) 100%);
@@ -76,6 +78,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 91px;
 }
 
 footer span {
@@ -120,7 +123,7 @@ footer span {
     gap: 29px;
 }
 
-.Addbox button {
+#Addbtn {
     width: 130px;
     height: 130px;
     background: rgba(255, 255, 255, 0.26);
@@ -129,7 +132,7 @@ footer span {
     cursor: pointer;
 }
 
-.Addbox button:hover {
+#Addbtn:hover {
     background: rgba(213, 162, 162, 0.26);
 }
 
@@ -139,6 +142,39 @@ footer span {
 }
 /* --------------------------AddBox---------------------- */
 
+
+/* --------------------------Input Box---------------------- */
+.inputbox {
+    display: none;
+}
+
+.inputbox input {
+ padding: 10px 15px;   
+ outline: none;
+ border-radius: 4px;
+ border: 1px solid rgba(130,225,255,1);
+ background: rgba(255, 255, 255, 0.19);
+ color: #FFF ;
+}
+
+.inputbox input:focus {
+    background: rgb(55, 18, 121);
+    border: 1px solid rgb(0, 171, 223);
+}
+
+#Add {
+    padding: 10px 15px;   
+    border-radius: 5px;
+    border: 1px solid rgba(130,225,255,1);
+    cursor: pointer;
+    background: rgba(101,49,189,1);
+    color: #fff;
+   }
+
+#Add:hover {
+    background: rgb(55, 18, 121);
+}
+/* --------------------------Input Box---------------------- */
 
 
 /* --------------------------WeatherCard---------------------- */
@@ -180,29 +216,60 @@ footer span {
 .celsius {
     display: flex;
 }
+
+.celsius h2 {
+    font-size: 144px;
+    color: #fff;
+}
+
 .celsius span {
+    margin-top: 45px;
     font-size: 24px;
+    color: #fff;
 }
 
 .whetherinfo {
-    margin: -20px 0 0  0;
+    margin-top: -25px;
+    color: #fff;
+    font-size: 18px;
 }
 
 
 .wthinfo {
-    display: flex;
+    display: grid;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
+    grid-template-columns: repeat(2, 2fr);
 }
 
 .wthinfo li {
     font-size: 18px;
     color: #fff;
+    width: 100%;
+    margin-top: 8px;
+    align-items:center;
+    display: flex;
     list-style: none;
 }
 
-.wthinfo li:first-child {
-    border-right: 1px solid #fff;
+.wthinfo li img {
+    margin-right: 6px;
+}
+
+.wthinfo li span {
+    margin-left: 12px;
+}
+
+.borderline::before {
+    content: '';
+    background-color: #fff;
+    width: 1px;
+    height: 19px;
+}
+
+.borderline img {
+    margin-left: 20px;
 }
 
 /* --------------------------WeatherCard---------------------- */

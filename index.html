@@ -36,11 +36,19 @@
         <section class="Content">
 
             <div class="Box Addbox">
-                <button><img src="./images/PlusIcon.svg" alt="Addicon"></button>
+                <button id="Addbtn"><img src="./images/PlusIcon.svg" alt="Addicon"></button>
                 <div class="addNewLoc">
-                    <span>Add new location</span>
+                    <span id="aspan">Add new location</span>
+
+                    <form class="inputbox">
+                    <input type="text" id="Cityinput" /> 
+                    <button id="Add">Add</button>
+                    </form>
+
                 </div>
             </div>
+
+
 
 
             <div class="Box WeatherCard">
@@ -54,18 +62,18 @@
                 </header>
 
                 <div class="WthCelsius">
-                    <div class="celsius">15<span>°C</span></div>
+                    <div class="celsius">
+                        <h2>15</h2>
+                        <span>°C</span>
+                    </div>
                     <div class="whetherinfo">Mostly cloudy</div>
                 </div>
 
                 <div class="wthinfo">
-                    <li><img src="./images/visibility.svg" alt="visibility" />Mostly cloudy<span>10km</span></li>
-                    <li><img src="./images/temp.svg" alt="tempherature" />Mostly cloudy<span>10km</span></li>
-                </div>
-
-                <div class="wthinfo">
-                    <li><img src="./images/hum.svg" alt="hum" />Mostly cloudy<span>10km</span></li>
-                    <li><img src="./images/wind.svg" alt="wind" />Mostly cloudy<span>10km</span></li>
+                    <li><img src="./images/hum.svg" alt="hum" />Humidity<span>10km</span></li>
+                    <li class="borderline"><img src="./images/wind.svg" alt="wind" />Feels like<span>10km</span></li>
+                    <li><img src="./images/visibility.svg" alt="hum" />Visibility<span>10km</span></li>
+                    <li class="borderline"><img src="./images/temp.svg" alt="wind" />temp<span>10km</span></li>
                 </div>
 
             </div>
@@ -82,5 +90,7 @@
     <!-- ==================Footer============= -->
     
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
