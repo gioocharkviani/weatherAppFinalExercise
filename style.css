@@ -277,3 +277,108 @@ footer span {
 }
 
 /* --------------------------WeatherCard---------------------- */
+
+.removecard {
+    position: absolute;
+    right: 0;
+    margin: -20px 30px 0 0;
+}
+
+.removecard button {
+    background:none;
+    border:none;
+    cursor: pointer;
+}
+
+.removecard button:hover {
+    opacity: 0.5;
+}
+/* --------------------------AddBox---------------------- */
+
+/* --------------------------Screen media---------------------- */
+
+@media screen and (max-device-width: 793px)  { 
+    .wthinfo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    
+    .borderline::before {
+        content: '';
+        background-color: none;
+        width: 0px;
+        height: 0px;
+    }
+    
+    .borderline img {
+        margin-left: 0px;
+    }
+}
+@media screen and (max-device-width: 596px)  { 
+.Content {
+    padding: 65px;
+}
+
+.Addbox {
+    background: none;
+    height: 50%;
+    width: 50%;
+}
+
+
+.addNewLoc span {
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
+.wthinfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.borderline::before {
+    content: '';
+    background-color: none;
+    width: 0px;
+    height: 0px;
+}
+
+.borderline img {
+    margin-left: 0px;
+}
+
+.logo h1 {
+display: none;
+}
+
+.logo {
+padding: 0 0 0 25px;
+}
+
+}
+
+@media screen and (max-device-width: 662px)  { 
+    .logo h1 {
+        display: none;
+        }
+        
+        .logo {
+        padding: 0 0 0 25px;
+        }
+
+        .Content {
+            padding: 65px;
+        }
+        
+        .Addbox {
+            background: none;
+            height: 70%;
+            width: 70%;
+        }
+        
+}
