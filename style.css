@@ -284,9 +284,12 @@ footer span {
     margin: -20px 30px 0 0;
 }
 
-.removecard button {
+.removecardbtn {
     background:none;
     border:none;
+    width: 16px;
+    height: 16px;
+    background: url(./images/remove.svg);
     cursor: pointer;
 }
 

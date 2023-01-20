@@ -27,8 +27,8 @@ function Fetch() {
     .then(res =>  res.json())
     .then(data => {
         GeographicLocation.push({
-            lat1: lon = data[0].lon,
-            lon1:  lat = data[0].lat ,
+            lat1: data[0].lon,
+            lon1: data[0].lat ,
             city: data[0].name
         })
     localStorage.setItem('Locations', JSON.stringify(GeographicLocation));    
@@ -57,14 +57,14 @@ function GetrequestLoop() {
 
 let CreatBox = document.createElement('div');
 CreatBox.setAttribute('class' , 'Box WeatherCard');
-CreatBox.setAttribute('id' , city);
+CreatBox.setAttribute('id' , location.lat1);
 Content.appendChild(CreatBox);
 
 
 CreatBox.innerHTML = `
 
 <div class="removecard">
-<button id="removecard" data-action="remove" onclick="removeFunction()"><img src="./images/remove.svg" /></button>
+<button class="removecardbtn" id="${location.lat1}" data-action="remove" ></button>
 </div>
 
 <header class="cardHeader">
@@ -122,17 +122,32 @@ AddBtn.addEventListener('click' , () => {
 })
 
 
-function removeFunction(city){
-    let temp = GeographicLocation.filter(location => location.city != city)
-    localStorage.setItem('Locations', JSON.stringify(GeographicLocation));
-}
 
 Content.addEventListener('click', (event) => {
+    let remobebtn = document.querySelector('.removecardbtn');
+    let WeatherCard = document.querySelector('.WeatherCard');
     const target = event.target;
     const ParentElement = target.parentNode;
 
-    const task = ParentElement;
-    const taskId = Number(task.id);
 
-    console.log(target);
+    //Task id
+
+    const box = ParentElement.id;
+    const BoxId = box.id;
+
+
+    //A C T I O N
+    const actions = target.dataset.action;
+    actions === "remove" && RemoveCard(BoxId) ;
+
+
+    function RemoveCard(BoxId) {
+        location.reload();
+        GeographicLocation = GeographicLocation.filter((box , index) => index , BoxId);
+        localStorage.setItem('Locations', JSON.stringify(GeographicLocation));   
+
+    }
+
+
 })
+
