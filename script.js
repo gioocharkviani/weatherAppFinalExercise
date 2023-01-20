@@ -53,45 +53,46 @@ function GetrequestLoop() {
             let wethIcon = data.weather[0].icon; 
             let city = location.city;
 
-//===================RENDER FUNCTION=======================
+            //===================RENDER FUNCTION=======================
 
-let CreatBox = document.createElement('div');
-CreatBox.setAttribute('class' , 'Box WeatherCard');
-CreatBox.setAttribute('id' , location.lat1);
-Content.appendChild(CreatBox);
+            let CreatBox = document.createElement('div');
+            CreatBox.setAttribute('class' , 'Box WeatherCard');
+            CreatBox.setAttribute('id' , location.lat1);
+            Content.appendChild(CreatBox);
+            Content.insertBefore(CreatBox , Addbox );
 
+            CreatBox.innerHTML = `
 
-CreatBox.innerHTML = `
+            <div class="removecard">
+            <button class="removecardbtn bi bi-trash3" id="${location.lat1}" data-action="remove" ></button>
+            </div>
 
-<div class="removecard">
-<button class="removecardbtn" id="${location.lat1}" data-action="remove" ></button>
-</div>
-
-<header class="cardHeader">
-<div class="Wthnow"><img src="http://openweathermap.org/img/wn/${wethIcon}.png"  alt="sun" /></div>
-<div class="Cityinfo">
-<h2>${city}</h2>
-<span>${day}</span>
-</div>
-</header>
+            <header class="cardHeader">
+            <div class="Wthnow"><img src="http://openweathermap.org/img/wn/${wethIcon}.png"  alt="sun" /></div>
+            <div class="Cityinfo">
+            <h2>${city}</h2>
+            <span>${day}</span>
+            </div>
+            </header>
             
-<div class="WthCelsius">
-<div class="celsius">
-<h2>${Math.floor(temp)}</h2>
-<span>°C</span>
-</div>
-<div class="whetherinfo">${wthdesc}</div>
-</div>
+            <div class="WthCelsius">
+            <div class="celsius">
+            <h2>${Math.floor(temp)}</h2>
+            <span>°C</span>
+            </div>
+            <div class="whetherinfo">${wthdesc}</div>
+            </div>
             
-<div class="wthinfo">
-<li><img src="./images/hum.svg" alt="hum" />Humidity<span>${Math.floor(Humidity)}</span></li>
-<li class="borderline"><img src="./images/wind.svg" alt="wind" />Feels like<span>${Math.floor(Feelslike)}</span></li>
-<li><img src="./images/visibility.svg" alt="hum" />Visibility<span>${Math.floor(visibility)}</span></li>
-<li class="borderline"><img src="./images/temp.svg" alt="wind" />temp<span>${Math.floor(temp)}</span></li>
-</div>
-`
-//===================RENDER FUNCTION=======================                                     
-        })
+            <div class="wthinfo">
+            <li><img src="./images/hum.svg" alt="hum" />Humidity<span>${Math.floor(Humidity)}</span></li>
+            <li class="borderline"><img src="./images/wind.svg" alt="wind" />Feels like<span>${Math.floor(Feelslike)}</span></li>
+            <li><img src="./images/visibility.svg" alt="hum" />Visibility<span>${Math.floor(visibility)}</span></li>
+            <li class="borderline"><img src="./images/temp.svg" alt="wind" />temp<span>${Math.floor(temp)}</span></li>
+            </div>
+            `
+            //===================RENDER FUNCTION=======================                                     
+                    })
+                    
         
     });
     
